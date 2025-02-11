@@ -25,3 +25,17 @@ def category_2():
             Product("Samsung Galaxy S25", "512GB, Черный цвет, 120 FPS", 250000.0, 4),
         ],
     )
+
+
+@pytest.fixture()
+def test_data():
+    return [
+        {
+            "name": "Category 1",
+            "description": "description 1",
+            "products": [
+                {"name": "Product 1", "description": "desc", "price": 10.0, "quantity": 1},
+                {"name": "Product 2", "description": "desc", "price": 20.0, "quantity": 2},
+            ],
+        }
+    ]
