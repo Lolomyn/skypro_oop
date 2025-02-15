@@ -12,7 +12,7 @@ class Product:
         self.quantity = quantity
 
     @classmethod
-    def new_product(cls, product_data):
+    def new_product(cls, product_data: dict) -> "Product":
         return cls(
             name=product_data.get("name"),
             description=product_data.get("description"),
@@ -21,16 +21,16 @@ class Product:
         )
 
     @property
-    def price(self):
+    def price(self) -> float:
         return self.__price
 
     @price.setter
-    def price(self, new_price):
+    def price(self, new_price: float) -> None:
         if new_price < 0:
-            print('Цена не должна быть нулевая или отрицательная')
+            print("Цена не должна быть нулевая или отрицательная")
         else:
             self.__price = new_price
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """Строковое представление продукта"""
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
