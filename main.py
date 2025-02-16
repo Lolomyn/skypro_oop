@@ -1,5 +1,36 @@
-from src.utils import create_objects_from_json, read_data
+from src.category import Category
+from src.product import Product
 
 if __name__ == "__main__":
-    categories = read_data("data/products.json")
-    users_data = create_objects_from_json(categories)
+    product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
+    product2 = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
+    product3 = Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
+
+    category1 = Category(
+        "Смартфоны",
+        "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
+        [product1, product2, product3],
+    )
+
+    # print(category1.products)
+    product4 = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
+    category1.add_product(product4)
+    # print(category1.products)
+    # print(category1.product_count)
+
+    new_product = Product.new_product(
+        {
+            "name": "Samsung Galaxy S23 Ultra",
+            "description": "256GB, Серый цвет, 200MP камера",
+            "price": 230000.0,
+            "quantity": 5,
+        }
+    )
+
+    category_2 = Category('new_cat', 'new_desc', [product1, product2, product3])
+    print(Category.product_count)
+    print(category1.products)
+    print(category_2.products)
+    product2.price = 150_000
+    print(product2.price)
+
