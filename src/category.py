@@ -20,8 +20,11 @@ class Category:
 
     @property
     def products(self):
-        return self.__products
+        output_str = ''
+        for product in self.__products:
+            output_str += str(product) + '\n'
+        return output_str
 
     def add_product(self, product: Product) -> None:
-        self.product_count += 1
+        Category.product_count += 1
         self.__products.append(product)

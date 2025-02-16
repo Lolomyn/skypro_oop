@@ -40,13 +40,14 @@ class Product:
             print("Цена не должна быть нулевая или отрицательная")
         else:
             if new_price < self.__price:
-                answer = input('Новая цена ниже текущей. Введите "y", чтобы подтвердить свое намерение.')
+                answer = input('Новая цена ниже текущей. Введите "y", чтобы подтвердить свое намерение: ')
                 if answer == 'y':
                     self.__price = new_price
                 else:
                     print("Изменение отменено.")
-            self.__price = new_price
+            else:
+                self.__price = new_price
 
-    def __repr__(self) -> str:
+    def __str__(self) -> str:
         """Строковое представление продукта"""
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."

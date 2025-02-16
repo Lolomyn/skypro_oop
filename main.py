@@ -12,11 +12,11 @@ if __name__ == "__main__":
         [product1, product2, product3],
     )
 
-    print(category1.products)
+    # print(category1.products)
     product4 = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
     category1.add_product(product4)
-    print(category1.products)
-    print(category1.product_count)
+    # print(category1.products)
+    # print(category1.product_count)
 
     new_product = Product.new_product(
         {
@@ -26,16 +26,11 @@ if __name__ == "__main__":
             "quantity": 5,
         }
     )
-    # print(product1.quantity)
-    # print(product1.price)
-    # print(new_product.description)
-    # print(new_product.price)
-    # print(new_product.quantity)
-    #
-    # new_product.price = 800
-    # print(new_product.price)
-    #
-    # new_product.price = -100
-    # print(new_product.price)
-    # new_product.price = 0
-    # print(new_product.price)
+
+    category_2 = Category('new_cat', 'new_desc', [product1, product2, product3])
+    print(Category.product_count)
+    print(category1.products)
+    print(category_2.products)
+    product2.price = 150_000
+    print(product2.price)
+
