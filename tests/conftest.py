@@ -10,6 +10,11 @@ def product():
 
 
 @pytest.fixture()
+def another_product():
+    return Product("Iphone 15 Pro Max", "512GB, Розовый цвет, 60 FPS", 150000.0, 1)
+
+
+@pytest.fixture()
 def category_1():
     return Category("Часы", "Мои часы", [Product("Poco Watch", "Черный цвет, водонепроницаемые", 5000.0, 1)])
 

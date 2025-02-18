@@ -51,3 +51,6 @@ class Product:
     def __str__(self) -> str:
         """Строковое представление продукта"""
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
+
+    def __add__(self, other):
+        return self.__price + other.__price
