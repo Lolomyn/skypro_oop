@@ -1,4 +1,4 @@
-from src.category import Category, CheckCategory
+from src.category import Category
 from src.product import Product
 
 if __name__ == "__main__":
@@ -9,7 +9,7 @@ if __name__ == "__main__":
     category1 = Category(
         "Смартфоны",
         "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
-        [product1, product2, product3]
+        [product1, product2, product3],
     )
 
     print(category1)
@@ -24,3 +24,17 @@ if __name__ == "__main__":
 
     for product in category1:
         print(product)
+
+    product_5 = Product.new_product(
+        {
+            "name": "Xiaomi POCO X3 Pro",
+            "description": "description",
+            "price": 27000.0,
+            "quantity": 1,
+        }
+    )
+
+    print()
+
+    print(product_5.price)
+    print(product_5.quantity)

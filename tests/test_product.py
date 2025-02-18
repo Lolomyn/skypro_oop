@@ -26,7 +26,7 @@ def test_product_new_product():
 
 
 def test_product_new_product_existing(product):
-    product_2 = Product.new_product(
+    Product.new_product(
         {
             "name": "Xiaomi POCO X3 Pro",
             "description": "description",

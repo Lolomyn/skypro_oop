@@ -19,8 +19,8 @@ def test_category_add_product(category_1, product):
 
 
 def test_category_products(category_1):
-    assert category_1.products == 'Poco Watch, 5000.0 руб. Остаток: 1 шт.\n'
+    assert category_1.products == "Poco Watch, 5000.0 руб. Остаток: 1 шт.\n"
 
 
 def test_category_str(category_1):
-    assert str(category_1) == 'Часы, количество продуктов: 1'
+    assert str(category_1) == "Часы, количество продуктов: 1"
