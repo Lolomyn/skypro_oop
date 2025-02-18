@@ -1,4 +1,4 @@
-from src.category import Category
+from src.category import Category, CheckCategory
 from src.product import Product
 
 if __name__ == "__main__":
@@ -21,3 +21,6 @@ if __name__ == "__main__":
     print(product1 + product2)
     print(product1 + product3)
     print(product2 + product3)
+
+    for product in category1:
+        print(product)
