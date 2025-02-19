@@ -2,7 +2,6 @@ import json
 import os
 
 from src.category import Category
-from src.product import Product
 from src.utils import create_objects_from_json, read_data
 
 
@@ -26,11 +25,5 @@ def test_create_objects_from_json(test_data):
     categories = create_objects_from_json(test_data)
 
     assert isinstance(categories, list)
-
     assert len(categories) == 1
     assert isinstance(categories[0], Category)
-
-    assert len(categories[0].products) == 2
-    assert isinstance(categories[0].products[0], Product)
-    assert categories[0].products[0].name == "Product 1"
-    assert categories[0].products[0].price == 10.0

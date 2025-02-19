@@ -14,7 +14,7 @@ def read_data(path: str) -> dict:
     return data
 
 
-def create_objects_from_json(data: dict) -> list:
+def create_objects_from_json(data: list) -> list:
     """Создание объекта из JSON содержимого"""
     categories_list = []
     for category in data:
