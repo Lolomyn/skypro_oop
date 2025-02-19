@@ -53,4 +53,4 @@ class Product:
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other) -> int:
-        return self.__price + other.__price
+        return self.__price * self.quantity + other.__price * other.quantity
