@@ -4,7 +4,7 @@ class Product:
     __price: float
     quantity: int
 
-    all_objects = {}
+    all_objects: dict = {}
 
     def __init__(self, name: str, description: str, price: float, quantity: int):
         """Конструктор продуктов"""
@@ -20,8 +20,8 @@ class Product:
         if product_data.get("name") in Product.all_objects:
             existing_product = Product.all_objects[product_data.get("name")]
             existing_product.quantity += product_data.get("quantity")
-            if existing_product.price != product_data['price']:
-                existing_product.price = max(existing_product.price, product_data['price'])
+            if existing_product.price != product_data["price"]:
+                existing_product.price = max(existing_product.price, product_data["price"])
         else:
             return cls(
                 name=product_data.get("name"),
@@ -41,7 +41,7 @@ class Product:
         else:
             if new_price < self.__price:
                 answer = input('Новая цена ниже текущей. Введите "y", чтобы подтвердить свое намерение: ')
-                if answer == 'y':
+                if answer == "y":
                     self.__price = new_price
                 else:
                     print("Изменение отменено.")
@@ -51,3 +51,6 @@ class Product:
     def __str__(self) -> str:
         """Строковое представление продукта"""
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
+
+    def __add__(self, other) -> int:
+        return self.__price * self.quantity + other.__price * other.quantity
