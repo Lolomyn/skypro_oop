@@ -53,4 +53,7 @@ class Product:
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other) -> int:
+        if type(self) is not type(other):
+            raise TypeError
+
         return self.__price * self.quantity + other.__price * other.quantity

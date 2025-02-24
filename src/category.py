@@ -28,6 +28,9 @@ class Category:
         return output_str
 
     def add_product(self, product: Product) -> None:
+        if not isinstance(product, Product):
+            raise TypeError
+
         Category.product_count += 1
         self.__products.append(product)
 
