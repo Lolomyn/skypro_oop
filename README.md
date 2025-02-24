@@ -85,6 +85,23 @@ Download in [here](https://git-scm.com/) and follow instructions
 
 Содержит информацию о продуктах
 
+#### Subclass Smartphone
+    Product(name: str, description: str, price: float, quantity: int)
+    efficiency: float
+    model: str
+    memory: int
+    color: str
+
+Дочерний класс, содержащий информацию о характеристиках смартфона
+
+#### Subclass Lawngrass
+    Product(name: str, description: str, price: float, quantity: int)
+    country: str
+    germination_period: str
+    color: str
+
+Дочерний класс, содержащий информацию о характеристиках газона
+
 ### Class Category
     name: str
     description: str

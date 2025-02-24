@@ -1,5 +1,7 @@
 from unittest.mock import patch
 
+import pytest
+
 from src.product import Product
 
 
@@ -59,3 +61,8 @@ def test_product_set_new_price_correct_cancelled(product):
 
 def test_product_add(product, another_product):
     assert product + another_product == 175000.0
+
+
+def test_product_add_typeerror(product):
+    with pytest.raises(TypeError):
+        assert product + 1000
