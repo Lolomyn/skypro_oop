@@ -1,5 +1,7 @@
 from src.category import Category
+from src.lawngrass import LawnGrass
 from src.product import Product
+from src.smartphone import Smartphone
 
 if __name__ == "__main__":
     product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
@@ -47,3 +49,11 @@ if __name__ == "__main__":
 
     print(Category.category_count)
     print(Category.product_count)
+
+    my_phone = Smartphone('Huawei', '8 RAM', 25_000.0, 1, 89, 'Poco X3 Pro', 256, 'Blue')
+    print(my_phone.name)
+    print(my_phone.color)
+
+    print(issubclass(Smartphone, Product))
+    print(issubclass(LawnGrass, Product))
+
