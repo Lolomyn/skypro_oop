@@ -50,7 +50,7 @@ def test_product_set_new_price_correct(product):
 def test_product_set_new_price_incorrect(capsys, product):
     product.price = -150
     print_result = capsys.readouterr()
-    assert print_result.out.strip() == "Цена не должна быть нулевая или отрицательная"
+    assert print_result.out.strip().split("\n")[-1] == "Цена не должна быть нулевая или отрицательная"
 
 
 def test_product_set_new_price_correct_cancelled(product):

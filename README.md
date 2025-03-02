@@ -76,6 +76,12 @@ Download in [here](https://git-scm.com/) and follow instructions
 `python main.py`
 
 ## Functional
+### Class BaseProduct
+    @classmethod
+    @abstractmethod
+    def new_product(cls, data):
+        pass
+Абстрактный класс для продуктов, хранящий абстрактный метод добавления новых продуктов
 
 ### Class Product
     name: str
@@ -112,6 +118,7 @@ Download in [here](https://git-scm.com/) and follow instructions
 
 Содержит информацию о категориях, их количестве и количестве продуктов в категориях    
     
-
-    
-    
+### Class MixinLog
+    def __repr__(self):
+        return f"{self.__class__.__name__}({self.name}, {self.description}, {self.price}, {self.quantity})"
+При создании объекта распечатывает в консоль информацию о том, от какого класса и с какими параметрами был создан объект

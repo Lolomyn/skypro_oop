@@ -1,4 +1,8 @@
-class Product:
+from src.base_product import BaseProduct
+from src.mixin_log import MixinLog
+
+
+class Product(BaseProduct, MixinLog):
     name: str
     description: str
     __price: float
@@ -8,12 +12,14 @@ class Product:
 
     def __init__(self, name: str, description: str, price: float, quantity: int):
         """Конструктор продуктов"""
+
         self.name = name
         self.description = description
         self.__price = price
         self.quantity = quantity
 
         Product.all_objects[name] = self
+        super().__init__()
 
     @classmethod
     def new_product(cls, product_data: dict) -> "Product":
