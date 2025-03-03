@@ -1,7 +1,6 @@
 import pytest
 
 from src.category import Category, CheckCategory
-from src.exception import ZeroQuantityException
 from src.product import Product
 
 
@@ -76,8 +75,8 @@ def test_check_category_empty():
 
 
 def test_add_product_zero_quantity():
-    with pytest.raises(ValueError) as e:
-        category = Category("name", "desc", [Product("Iphone 15 Pro Max", "512GB, Розовый цвет, 60 FPS", 150000.0, 0)])
+    with pytest.raises(ValueError):
+        Category("name", "desc", [Product("Iphone 15 Pro Max", "512GB, Розовый цвет, 60 FPS", 150000.0, 0)])
 
 
 def test_category_middle_price(category_2):

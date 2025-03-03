@@ -5,7 +5,7 @@ from src.product import Product
 
 class Order(BaseOrder):
 
-    def __init__(self, product, quantity, price):
+    def __init__(self, product: Product, quantity: int, price: float):
         self.product = product
         if quantity <= 0:
             raise ZeroQuantityException

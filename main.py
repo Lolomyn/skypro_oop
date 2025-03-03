@@ -1,5 +1,5 @@
 from src.category import Category
-from src.exception import ZeroQuantityException, ObjectException
+from src.exception import ZeroQuantityException
 from src.order import Order
 from src.product import Product
 
@@ -7,7 +7,7 @@ if __name__ == "__main__":
 
     try:
         product_invalid = Product("Бракованный товар", "Неверное количество", 1000.0, 0)
-    except ValueError as e:
+    except ValueError:
         print("Товар с нулевым количеством не может быть добавлен")
     else:
         print("Не возникла ошибка ValueError при попытке добавить продукт с нулевым количеством")

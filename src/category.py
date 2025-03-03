@@ -1,7 +1,6 @@
 from typing import Self
 
 from src.base_order import BaseOrder
-from src.exception import ZeroQuantityException
 from src.product import Product
 
 
