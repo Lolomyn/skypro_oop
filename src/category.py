@@ -1,9 +1,10 @@
 from typing import Self
 
+from src.base_order import BaseOrder
 from src.product import Product
 
 
-class Category:
+class Category(BaseOrder):
     name: str
     description: str
     __products: list
@@ -33,6 +34,20 @@ class Category:
 
         Category.product_count += 1
         self.__products.append(product)
+
+    def middle_price(self):
+        full_price = 0
+        full_quantity = 0
+
+        try:
+            for product in self.__products:
+                full_price += product.price
+                full_quantity += product.quantity
+            res = full_price / full_quantity
+        except ZeroDivisionError:
+            return 0
+        else:
+            return res
 
     def __str__(self) -> str:
         quantity = 0

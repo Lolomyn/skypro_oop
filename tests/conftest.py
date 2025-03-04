@@ -2,6 +2,7 @@ import pytest
 
 from src.category import Category
 from src.lawngrass import LawnGrass
+from src.order import Order
 from src.product import Product
 from src.smartphone import Smartphone
 
@@ -9,6 +10,11 @@ from src.smartphone import Smartphone
 @pytest.fixture()
 def product():
     return Product("Xiaomi POCO X3 Pro", "256GB, Синий цвет, 120 FPS", 25000.0, 1)
+
+
+@pytest.fixture()
+def order():
+    return Order("Xiaomi POCO X3 Pro", 12, 25000.0)
 
 
 @pytest.fixture()
